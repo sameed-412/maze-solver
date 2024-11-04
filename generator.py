@@ -1,7 +1,7 @@
 from random import choice, shuffle
 
 # Constants
-cols, rows = 19, 19  # Size of the maze
+cols, rows = 19,19   # Size of the maze
 
 # Directions for moving in the maze
 DIRECTIONS = [(0, -1), (1, 0), (0, 1), (-1, 0)]  # Up, Right, Down, Left
@@ -30,3 +30,4 @@ def return_maze():
 def printmaze():
     for row in maze:
         print(row)
+# printmaze()

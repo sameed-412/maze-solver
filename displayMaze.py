@@ -1,7 +1,7 @@
 import pygame
 import generator  # Ensure this module contains the `return_maze()` function
 from solvers import leftHandRule as lfw
-
+from solvers import dikestruh as dj
 cols, rows = 19,19  # Size of the maze
 tile = 25
 pygame.init()
@@ -36,14 +36,14 @@ def draw_border():
 
 def draw_path(path):
     for x,y in path:
-        center_x = 50 + (x*tile) + 12 
-        center_y = 50 + (y*tile) + 12 
+        center_x =(y*tile) + 12 
+        center_y =(x*tile) + 12 
         pygame.draw.circle(subscreen , pygame.Color("green") , (center_x , center_y) , 10)
 
 def reset_path(path):
     for x,y in path:
-        center_x = 50 + (x*tile) + 12
-        center_y = 50 + (y*tile) + 12
+        center_x =(y*tile) + 12
+        center_y =(x*tile) + 12
         pygame.draw.circle(subscreen ,grey , (center_x , center_y) , 10)
 
 font = pygame.font.Font(None , 30)
@@ -79,9 +79,10 @@ while True:
                 print("Path taken: " , path)
                 once = True
             draw_path(path)
-            pygame.display.update()
+            # pygame.display.update()
         if keys[pygame.K_2]:
-            pass
+            path,time = dj.runner(maze , start , end)
+            draw_path(path)
         if keys[pygame.K_3]:
             pass
         if keys[pygame.K_4]:
@@ -116,5 +117,5 @@ while True:
     draw_border()
     # Blit the subscreen to the main screen
     pygame.display.update()  # Update the display
-    clock.tick(60)  # Set the frame rate to 60 FPS
+    # clock.tick(60)  # Set the frame rate to 60 FPS
 

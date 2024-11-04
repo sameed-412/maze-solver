@@ -39,17 +39,7 @@ def dorkStronk(maze, start, end):
 
     return []  # Return empty path if there's no way to reach the end
 
-def runner():
-    maze = [
-        [0, 1, 0, 0, 0],
-        [0, 1, 1, 1, 0],
-        [0, 0, 0, 1, 0],
-        [1, 1, 0, 1, 0],
-        [0, 0, 0, 0, 0]
-    ]
-    start = (0, 0)
-    end = (4, 4)
-
+def runner(maze,start,end):
     startTime = time.perf_counter()
     path = dorkStronk(maze, start, end)
     endTime = time.perf_counter()
@@ -57,4 +47,4 @@ def runner():
 
     return path, tekken
 
-print(runner())
+# print(runner())
