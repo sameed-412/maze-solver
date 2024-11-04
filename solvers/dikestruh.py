@@ -43,8 +43,6 @@ def runner(maze,start,end):
     startTime = time.perf_counter()
     path = dorkStronk(maze, start, end)
     endTime = time.perf_counter()
-    tekken = f"{(endTime - startTime):.20f}"
+    tekken = endTime - startTime
 
     return path, tekken
-
-# print(runner())

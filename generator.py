@@ -21,8 +21,9 @@ def generate_maze(x, y):
             maze[y + dy][x + dx] = 0  # Remove the wall between the current and neighbor cell
             generate_maze(nx, ny)  # Recursively visit the neighbor
 
-generate_maze(0, 0)
 # Start generating the maze from the top-left corner
+generate_maze(0, 0)
+
 def return_maze():
     return maze
 
